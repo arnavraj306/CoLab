@@ -90,6 +90,7 @@
 
         .tab-section {
             display: none;
+            padding: 0;
         }
 
         .tab-section.active-section {
@@ -252,221 +253,224 @@
     <header>
         <h1>Colab</h1>
 
-        <nav>
-            <button class="tab-btn active" onclick="showTab('tab-home', this)">Home & Creators</button>
-            <button class="tab-btn" onclick="showTab('tab-projects', this)">Projects & Matching</button>
-            <button class="tab-btn" onclick="showTab('tab-collab', this)">Collaborate & Messages</button>
-            <button class="tab-btn" onclick="showTab('tab-safety', this)">Report & Moderation</button>
+        <nav aria-label="Main navigation">
+            <button type="button" class="tab-btn active" onclick="showTab('tab-home', this)">Home & Creators</button>
+            <button type="button" class="tab-btn" onclick="showTab('tab-projects', this)">Projects & Matching</button>
+            <button type="button" class="tab-btn" onclick="showTab('tab-collab', this)">Collaborate & Messages</button>
+            <button type="button" class="tab-btn" onclick="showTab('tab-safety', this)">Report & Moderation</button>
         </nav>
     </header>
 
-    <!-- TAB 1: HOME, CREATOR PROFILES, SKILLS, AVAILABILITY & PORTFOLIO LINKS -->
-    <div id="tab-home" class="tab-section active-section">
-        <section id="home">
-            <h2>Connect. Create. Collaborate.</h2>
-            <p>Find creators and work together on amazing projects.</p>
-            <button class="btn action-btn" onclick="showTab('tab-projects', document.querySelectorAll('.tab-btn')[1])">Explore Projects & Matches</button>
+    <main>
+        <!-- TAB 1: HOME, CREATOR PROFILES, SKILLS, AVAILABILITY & PORTFOLIO LINKS -->
+        <section id="tab-home" class="tab-section active-section" aria-label="Home and Creators">
+            <section id="home">
+                <h2>Connect. Create. Collaborate.</h2>
+                <p>Find creators and work together on amazing projects.</p>
+                <button type="button" class="btn action-btn" onclick="showTab('tab-projects', document.querySelectorAll('.tab-btn')[1])">Explore Projects & Matches</button>
+            </section>
+
+            <section id="creators">
+                <h2>Featured Creators</h2>
+
+                <div class="container">
+                    <article class="card">
+                        <h3>Rahul Sharma</h3>
+                        <p>Content Creator</p>
+                        <p><strong>Availability:</strong> Available Now</p>
+                        <p><strong>Skills:</strong> <span class="tag">Scripting</span> <span class="tag">Reels</span></p>
+                        <p>Instagram: @rahulcreates</p>
+                        <p><a href="#portfolio-rahul" onclick="return false;">Portfolio: rahulcreates.in</a></p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Request Collab</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Message</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3>Priya Verma</h3>
+                        <p>Video Editor</p>
+                        <p><strong>Availability:</strong> Part-Time</p>
+                        <p><strong>Skills:</strong> <span class="tag">Premiere Pro</span> <span class="tag">Color Grading</span></p>
+                        <p>Instagram: @priyaedits</p>
+                        <p><a href="#portfolio-priya" onclick="return false;">Portfolio: priyaedits.in</a></p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Request Collab</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Message</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3>Arjun Singh</h3>
+                        <p>Photographer</p>
+                        <p><strong>Availability:</strong> Open to Pitches</p>
+                        <p><strong>Skills:</strong> <span class="tag">Portraits</span> <span class="tag">Lightroom</span></p>
+                        <p>Instagram: @arjunshots</p>
+                        <p><a href="#portfolio-arjun" onclick="return false;">Portfolio: arjunshots.in</a></p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Request Collab</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Message</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </section>
 
-        <section id="creators">
-            <h2>Featured Creators</h2>
+        <!-- TAB 2: PROJECT POSTS & MATCHING -->
+        <section id="tab-projects" class="tab-section" aria-label="Projects and Matching">
+            <section>
+                <h2>Skill Matching</h2>
+                <p>Suggested creators matched to your profile skills.</p>
 
-            <div class="container">
-                <div class="card">
-                    <h3>Rahul Sharma</h3>
-                    <p>Content Creator</p>
-                    <p><strong>Availability:</strong> Available Now</p>
-                    <p><strong>Skills:</strong> <span class="tag">Scripting</span> <span class="tag">Reels</span></p>
-                    <p>Instagram: @rahulcreates</p>
-                    <p><a href="#portfolio-rahul" onclick="return false;">Portfolio: rahulcreates.in</a></p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Request Collab</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Message</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Report</button>
-                    </div>
+                <div class="container">
+                    <article class="card">
+                        <span class="tag">95% Skill Match</span>
+                        <h3>Priya Verma</h3>
+                        <p>Matched on: <strong>Video Editing & Reels</strong></p>
+                        <p>Availability: Part-Time</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Connect</button>
+                            <button type="button" class="btn-small btn-outline action-btn">View Profile</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="tag">88% Skill Match</span>
+                        <h3>Arjun Singh</h3>
+                        <p>Matched on: <strong>Visuals & Thumbnails</strong></p>
+                        <p>Availability: Open to Pitches</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Connect</button>
+                            <button type="button" class="btn-small btn-outline action-btn">View Profile</button>
+                        </div>
+                    </article>
                 </div>
+            </section>
 
-                <div class="card">
-                    <h3>Priya Verma</h3>
-                    <p>Video Editor</p>
-                    <p><strong>Availability:</strong> Part-Time</p>
-                    <p><strong>Skills:</strong> <span class="tag">Premiere Pro</span> <span class="tag">Color Grading</span></p>
-                    <p>Instagram: @priyaedits</p>
-                    <p><a href="#portfolio-priya" onclick="return false;">Portfolio: priyaedits.in</a></p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Request Collab</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Message</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Report</button>
-                    </div>
+            <section>
+                <h2>Project Posts</h2>
+                <p>Open collaboration projects posted by creators.</p>
+
+                <div class="container">
+                    <article class="card">
+                        <h3>Travel Vlog Series</h3>
+                        <p><strong>Posted by:</strong> Rahul Sharma</p>
+                        <p><strong>Skills Needed:</strong> <span class="tag">Video Editor</span> <span class="tag">Sound Design</span></p>
+                        <p><strong>Availability:</strong> 2 Weeks</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Apply to Project</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <h3>Indie Fashion Lookbook</h3>
+                        <p><strong>Posted by:</strong> Arjun Singh</p>
+                        <p><strong>Skills Needed:</strong> <span class="tag">Content Creator</span> <span class="tag">Stylist</span></p>
+                        <p><strong>Availability:</strong> Weekend Shoot</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Apply to Project</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                        </div>
+                    </article>
                 </div>
-
-                <div class="card">
-                    <h3>Arjun Singh</h3>
-                    <p>Photographer</p>
-                    <p><strong>Availability:</strong> Open to Pitches</p>
-                    <p><strong>Skills:</strong> <span class="tag">Portraits</span> <span class="tag">Lightroom</span></p>
-                    <p>Instagram: @arjunshots</p>
-                    <p><a href="#portfolio-arjun" onclick="return false;">Portfolio: arjunshots.in</a></p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Request Collab</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Message</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Report</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- TAB 2: PROJECT POSTS & MATCHING -->
-    <div id="tab-projects" class="tab-section">
-        <section>
-            <h2>Skill Matching</h2>
-            <p>Suggested creators matched to your profile skills.</p>
-
-            <div class="container">
-                <div class="card">
-                    <span class="tag">95% Skill Match</span>
-                    <h3>Priya Verma</h3>
-                    <p>Matched on: <strong>Video Editing & Reels</strong></p>
-                    <p>Availability: Part-Time</p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Connect</button>
-                        <button type="button" class="btn-small btn-outline action-btn">View Profile</button>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <span class="tag">88% Skill Match</span>
-                    <h3>Arjun Singh</h3>
-                    <p>Matched on: <strong>Visuals & Thumbnails</strong></p>
-                    <p>Availability: Open to Pitches</p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Connect</button>
-                        <button type="button" class="btn-small btn-outline action-btn">View Profile</button>
-                    </div>
-                </div>
-            </div>
+            </section>
         </section>
 
-        <section>
-            <h2>Project Posts</h2>
-            <p>Open collaboration projects posted by creators.</p>
+        <!-- TAB 3: COLLABORATION REQUESTS & MESSAGING -->
+        <section id="tab-collab" class="tab-section" aria-label="Collaborate and Messages">
+            <section id="collab">
+                <h2>Want to Collaborate?</h2>
 
-            <div class="container">
-                <div class="card">
-                    <h3>Travel Vlog Series</h3>
-                    <p><strong>Posted by:</strong> Rahul Sharma</p>
-                    <p><strong>Skills Needed:</strong> <span class="tag">Video Editor</span> <span class="tag">Sound Design</span></p>
-                    <p><strong>Availability:</strong> 2 Weeks</p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Apply to Project</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                <form id="collabForm" onsubmit="return false;">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+
+                    <label for="message">Collaboration Idea</label>
+                    <textarea id="message" placeholder="Tell us your idea"></textarea>
+
+                    <button type="submit" class="action-btn">Submit</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Collaboration Requests</h2>
+                <div class="container">
+                    <article class="card">
+                        <h3>Request from Priya Verma</h3>
+                        <p><strong>Project:</strong> YouTube Tech Review</p>
+                        <p>"Would love to edit your upcoming tech video!"</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Accept</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Decline</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section>
+                <h2>Messages</h2>
+                <article class="box">
+                    <h3>Chat with Rahul Sharma</h3>
+                    <div class="chat-box" role="log" aria-label="Chat history">
+                        <p><strong>Rahul:</strong> Hey! Are you free to collaborate on a reel this week?</p>
+                        <p><strong>You:</strong> Yes, let's share portfolio links and plan it out.</p>
                     </div>
-                </div>
-
-                <div class="card">
-                    <h3>Indie Fashion Lookbook</h3>
-                    <p><strong>Posted by:</strong> Arjun Singh</p>
-                    <p><strong>Skills Needed:</strong> <span class="tag">Content Creator</span> <span class="tag">Stylist</span></p>
-                    <p><strong>Availability:</strong> Weekend Shoot</p>
+                    <label for="chat-input" style="margin-top: 0;">Reply</label>
+                    <input type="text" id="chat-input" placeholder="Type a message...">
                     <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Apply to Project</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Report</button>
+                        <button type="button" class="btn-small action-btn">Send Message</button>
+                        <button type="button" class="btn-small btn-outline action-btn">Report Chat</button>
                     </div>
+                </article>
+            </section>
+        </section>
+
+        <!-- TAB 4: REPORTING & MODERATION -->
+        <section id="tab-safety" class="tab-section" aria-label="Report and Moderation">
+            <section>
+                <h2>Report an Issue</h2>
+                <form onsubmit="return false;">
+                    <label for="report-target">Creator or Project Name</label>
+                    <input type="text" id="report-target" placeholder="Enter name or project title">
+
+                    <label for="report-reason">Reason</label>
+                    <select id="report-reason">
+                        <option>Spam or Fake Profile</option>
+                        <option>Inappropriate Content</option>
+                        <option>Harassment in Messages</option>
+                    </select>
+
+                    <button type="submit" class="action-btn">Submit Report</button>
+                </form>
+            </section>
+
+            <section>
+                <h2>Moderation Queue</h2>
+                <div class="container">
+                    <article class="card">
+                        <span class="tag">Pending Review</span>
+                        <h3>Reported Post: "Free Followers"</h3>
+                        <p><strong>Reason:</strong> Spam or Fake Profile</p>
+                        <p><strong>Reported By:</strong> Priya Verma</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn-small action-btn">Remove Post</button>
+                            <button type="button" class="btn-small btn-outline action-btn">Ignore</button>
+                        </div>
+                    </article>
                 </div>
-            </div>
+            </section>
         </section>
-    </div>
-
-    <!-- TAB 3: COLLABORATION REQUESTS & MESSAGING -->
-    <div id="tab-collab" class="tab-section">
-        <section id="collab">
-            <h2>Want to Collaborate?</h2>
-
-            <form id="collabForm" onsubmit="return false;">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" placeholder="Enter your name">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
-
-                <label for="message">Collaboration Idea</label>
-                <textarea id="message" placeholder="Tell us your idea"></textarea>
-
-                <button type="submit" class="action-btn">Submit</button>
-            </form>
-        </section>
-
-        <section>
-            <h2>Collaboration Requests</h2>
-            <div class="container">
-                <div class="card">
-                    <h3>Request from Priya Verma</h3>
-                    <p><strong>Project:</strong> YouTube Tech Review</p>
-                    <p>"Would love to edit your upcoming tech video!"</p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Accept</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Decline</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Messages</h2>
-            <div class="box">
-                <h3>Chat with Rahul Sharma</h3>
-                <div class="chat-box">
-                    <p><strong>Rahul:</strong> Hey! Are you free to collaborate on a reel this week?</p>
-                    <p><strong>You:</strong> Yes, let's share portfolio links and plan it out.</p>
-                </div>
-                <input type="text" placeholder="Type a message...">
-                <div class="btn-group">
-                    <button type="button" class="btn-small action-btn">Send Message</button>
-                    <button type="button" class="btn-small btn-outline action-btn">Report Chat</button>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- TAB 4: REPORTING & MODERATION -->
-    <div id="tab-safety" class="tab-section">
-        <section>
-            <h2>Report an Issue</h2>
-            <form onsubmit="return false;">
-                <label for="report-target">Creator or Project Name</label>
-                <input type="text" id="report-target" placeholder="Enter name or project title">
-
-                <label for="report-reason">Reason</label>
-                <select id="report-reason">
-                    <option>Spam or Fake Profile</option>
-                    <option>Inappropriate Content</option>
-                    <option>Harassment in Messages</option>
-                </select>
-
-                <button type="submit" class="action-btn">Submit Report</button>
-            </form>
-        </section>
-
-        <section>
-            <h2>Moderation Queue</h2>
-            <div class="container">
-                <div class="card">
-                    <span class="tag">Pending Review</span>
-                    <h3>Reported Post: "Free Followers"</h3>
-                    <p><strong>Reason:</strong> Spam or Fake Profile</p>
-                    <p><strong>Reported By:</strong> Priya Verma</p>
-                    <div class="btn-group">
-                        <button type="button" class="btn-small action-btn">Remove Post</button>
-                        <button type="button" class="btn-small btn-outline action-btn">Ignore</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+    </main>
 
     <footer>
-        <p>© 2026 CoLab | Made for Creators</p>
+        <p><small>© 2026 CoLab | Made for Creators</small></p>
     </footer>
 
     <script>
